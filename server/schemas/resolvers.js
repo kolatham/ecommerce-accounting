@@ -1,6 +1,7 @@
 const { User, Product } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+const bcrypt = require("bcrypt")
 
 const resolvers = {
   Query: {
@@ -13,12 +14,13 @@ const resolvers = {
     me: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
       return User.find(params);
-    }
+    },
   },
   Mutation: {
     createUser: async (parent, args) => {
       const user = await User.create(args);
-      return user;
+      const token = signToken(user);
+      return {user, token};
     },
     updateUser: async (parent, args) => {
         const user = await User.updateOne(args);
@@ -35,7 +37,8 @@ const resolvers = {
         throw new AuthenticationError('No user found with this email address');
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      // const correctPw = await User.isCorrectPassword(password);
+      const correctPw = await bcrypt.compareSync(password, user.password)
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');

@@ -54,3 +54,6 @@ module.exports = {
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };
+
+//ghhjhfgghhgfgg.giiygghiuh.vgyyuuigyft
+// {username: "testnfd", e,a: 'sjdh}

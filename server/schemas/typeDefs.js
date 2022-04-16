@@ -25,13 +25,13 @@ type Auth {
   }
 
   type Query {
-   me(id:ID!):User
+   me(id:ID!):User 
    getProducts: [Products]
    getSingleProduct(id: ID!): Products
   }
 
   type Mutation {
-    createUser(email: String!, username: String!, password: String!): User
+    createUser(email: String!, username: String!, password: String!): Auth
     updateUser(email: String!, username: String!, password: String!): User
     deleteUser(username: String!): User
     login(email: String!, password: String!): Auth
