@@ -8,7 +8,7 @@ const products =[{
     "price": "$100/Return",
     "countInStock": 20,
     "name": "Personal Income Tax Preparation",
-    "image": "/images/sb.jpg",
+    "image": "/images/tax.jpg",
     "description": "Prepare current or prior year federal and state tax returns. Calculating tax credits, deductibles, and liabilities. Reviewing if tax reports are in compliance with government tax rule and regulations. Answering clients' financial questions",
     
   },{
