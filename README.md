@@ -30,8 +30,8 @@
 ## User Story
 
 ```
-As a client, I want to obtain accounting services from trusted accounting professionals so that I can hire someone to complete accounting 
-tasks that I otherwise would not be able to complete on my own.  
+As a client, I want to obtain accounting services from trusted accounting professionals so that I can hire someone to complete 
+accounting tasks that I otherwise would not be able to complete on my own.  
 ```
 
 ## Table of Contents
